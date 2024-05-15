@@ -14,6 +14,7 @@ import { Button } from "./ui/button";
 import { Minus, Plus,Delete } from "lucide-react";
 import { MdDelete } from "react-icons/md";
 import { AiOutlinePlus ,AiOutlineMinus} from "react-icons/ai";
+import CheckOut from "./CheckOut";
 export default function ShoppingCartModel() {
     const {
         cartCount,
@@ -124,7 +125,7 @@ export default function ShoppingCartModel() {
               Shipping is calculated at checkout.
             </p>
             <div className="mt-6">
-            <Button className="w-full text-lg" size={"lg"} onClick={handlickCheckout}>Checkout</Button>
+            <CheckOut total={totalPrice}/>
             </div>
             </div>
          }

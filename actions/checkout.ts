@@ -17,6 +17,7 @@ await fetch('https://pay.chargily.net/test/api/v2/checkouts', options)
                 if(response.checkout_url){
 
                     window.location.href = response.checkout_url;
+                   
                 }
       
             }
