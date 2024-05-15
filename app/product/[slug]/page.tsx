@@ -4,7 +4,7 @@ import AddToBag from '@/components/AddToBag';
 import CheckOut from '@/components/CheckOut';
 import ImageGallery from '@/components/ImageGallery';
 import { MotionDiv } from '@/components/MotionDiv';
-import product from '@/sanity/schemaTypes/product';
+
 
 import { Truck } from 'lucide-react';
 import React from 'react'
