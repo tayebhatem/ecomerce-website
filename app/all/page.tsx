@@ -53,9 +53,9 @@ export default async function AllPage() {
     
         {
             products.map((product)=>(
-                <div className='group relative cursor-pointer' >
+                <div className='group relative cursor-pointer' key={product.id}>
                
-                    <Link href={'/product/'+product.slug} className='group relative cursor-pointer' key={product.id}>
+                    <Link href={'/product/'+product.slug} className='group relative cursor-pointer' >
                 <div className='aspect-square w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-88'>
                  <Image src={product.imageUrl} width={300} height={300} className='w-full h-full object-center object-cover lg:h-full lg:w-full' alt={product.slug} />
                 </div>
