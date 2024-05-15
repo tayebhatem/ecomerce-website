@@ -38,7 +38,7 @@ const getData=async(slug:string)=>{
 export default async function ProductPage({params}:{params:{slug:string}}) {
     const data:Product=await getData( params.slug)
   return (
-    <div className='mb-6'>
+    <div className='mb-6 overflow-hidden'>
     <div className='mx-auto  max-w-screen-xl px-4 md:px-8 '>
     <div className='grid gap-8 md:grid-cols-2'>
     <ImageGallery images={data.images}/>

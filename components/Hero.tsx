@@ -13,7 +13,7 @@ const getData=async()=>{
 export default async function Hero() {
     const data=await getData()
   return (
-    <div className='mx-auto max-w-2xl px-4 sm:pb-6 lg:max-w-7xl lg:px-8'>
+    <div className='mx-auto max-w-2xl px-4 sm:pb-6 lg:max-w-7xl lg:px-8 overflow-hidden'>
 <div className='flex justify-between flex-wrap mb-8 md:mb-16'>
 <MotionDiv initial={{x:-100,opacity:0}} animate={{x:0,opacity:1}} transition={{duration:0.4}}  className='mb-6 flex flex-col justify-center sm:mb-12 lg:mb-0 lg:w-1/3 lg:pb-24 lg:pt-48'>
 <h1  className='mb-4 font-bold text-4xl sm:text-5xl md:mb-8 md:text-6xl'>
