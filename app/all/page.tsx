@@ -1,10 +1,7 @@
 import React from 'react'
 import { client } from '../lib/sanity';
-import Pagination from '@mui/material/Pagination';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Input } from '@mui/material';
 import { Search } from 'lucide-react';
 import AddToBag from '@/components/AddToBag';
 
@@ -23,6 +20,7 @@ const getData=async()=>{
         _id,
           "imageUrl": images[0].asset->url,
           price,
+          discount,
           name,
           "slug": slug.current,
           "categoryName": category->name
