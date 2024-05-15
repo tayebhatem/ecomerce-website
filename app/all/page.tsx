@@ -30,6 +30,7 @@ const getData=async()=>{
       const data:Product[]=await client.fetch(query);
       return data;
 }
+export const dynamic = 'force-dynamic'
 export default async function AllPage() {
     
     const products=await getData();

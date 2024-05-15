@@ -29,6 +29,7 @@ const getData=async(category:string)=>{
       const data:Product[]=await client.fetch(query);
       return data;
 }
+export const dynamic = 'force-dynamic'
 export default async function CategoryPage({params}:{params:{category:string}}) {
     const products=await getData(params.category)
   return (
