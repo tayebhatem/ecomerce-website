@@ -10,10 +10,10 @@ import {
 import Image from "next/image";
 import { useShoppingCart } from 'use-shopping-cart'
 import { Button } from "./ui/button";
-import CheckOut from "./CheckOut";
-import { Minus, Plus } from "lucide-react";
 
-  
+import { Minus, Plus,Delete } from "lucide-react";
+import { MdDelete } from "react-icons/md";
+import { AiOutlinePlus ,AiOutlineMinus} from "react-icons/ai";
 export default function ShoppingCartModel() {
     const {
         cartCount,
@@ -85,15 +85,20 @@ export default function ShoppingCartModel() {
 
                        <div className="flex flex-1 justify-between items-center ">
                        <div className="flex gap-3 items-center self-end">
-                       <Button size={"sm"} onClick={()=>incrementItem(entry.id)} className="rounded-none"><Plus/></Button>
-                       <p className="font-semibold text-sm md:text-lg ">
+                       <Button size={"sm"} onClick={()=>incrementItem(entry.id)} className="rounded-none">
+                       <AiOutlinePlus className="sm:w-5 sm:h-5"/>
+                       </Button>
+                       <p className="font-semibold text-sm text-center md:text-lg ">
                             {entry.quantity} item
                         </p>
-                        <Button size={"sm"} onClick={()=>decrementItem(entry.id)} className="rounded-none"><Minus/></Button>
+                        <Button size={"sm"} onClick={()=>decrementItem(entry.id)} className="rounded-none">
+                        <AiOutlineMinus className="sm:w-5 sm:h-5" />
+                        </Button>
                        </div>
                         <div className="flex text-sm md:text-lg self-end">
                         <button onClick={()=>removeItem(entry.id)} className="font-medium text-primary hover:text-primary/10">
-                          remove
+                        <MdDelete className="w-6 h-6" />
+
                         </button>
                         </div>
                        </div>
