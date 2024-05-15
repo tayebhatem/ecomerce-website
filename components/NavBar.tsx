@@ -23,15 +23,15 @@ const Links=[
   },
   {
     name:'Tshirt',
-    href:'/tshirts'
+    href:'/products/tshirts'
   },
   {
     name:'Pants',
-    href:'/pants'
+    href:'/products/pants'
   },
   {
     name:'Shoes',
-    href:'/shoes'
+    href:'/products/shoes'
   }
 ]
 export default function NavBar() {

@@ -1,10 +1,11 @@
 import React from 'react'
-import { client } from '../lib/sanity';
+
 
 import Image from 'next/image';
 import Link from 'next/link';
 import { Search } from 'lucide-react';
 import AddToBag from '@/components/AddToBag';
+import { client } from '@/app/lib/sanity';
 
 interface Product{
     id:string;
