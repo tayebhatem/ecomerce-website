@@ -12,10 +12,11 @@ export default function CheckOut({total}:{total:number | undefined}) {
      const {clearCart}=useShoppingCart()
       const pathname=usePathname()
       
-      const handlecheckoutClick=()=>{
+      const handlecheckoutClick=async()=>{
         if(!total) return
-       handlickCheckout(total)
-       clearCart()
+      await handlickCheckout(total)
+    
+      
       }
   
   return (

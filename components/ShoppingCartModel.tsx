@@ -67,7 +67,7 @@ export default function ShoppingCartModel() {
           <div className='mt-8 flex-1 overflow-y-auto'>
            <ul className='my-6 mr-4 divide-y divide-gray-200'>
             {
-                cartCount===0 ?<h1 className="py-6  text-muted-foreground">You have no items</h1>:
+                cartCount===0 ?<h1 className="py-6  text-muted-foreground text-center h-full">You have no items</h1>:
                 <>
                 {
                    items.map((entry)=>(
