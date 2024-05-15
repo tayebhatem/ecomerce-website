@@ -15,7 +15,7 @@ export default function CheckOut({total}:{total:number | undefined}) {
       const handlecheckoutClick=()=>{
         if(!total) return
        handlickCheckout(total)
-       // clearCart()
+       clearCart()
       }
   
   return (
