@@ -1,8 +1,11 @@
+
 import { client } from '@/app/lib/sanity';
 import AddToBag from '@/components/AddToBag';
+import CheckOut from '@/components/CheckOut';
 import ImageGallery from '@/components/ImageGallery';
 import { MotionDiv } from '@/components/MotionDiv';
-import { Button } from '@/components/ui/button';
+import product from '@/sanity/schemaTypes/product';
+
 import { Truck } from 'lucide-react';
 import React from 'react'
 
@@ -61,8 +64,8 @@ export default async function ProductPage({params}:{params:{slug:string}}) {
    </div>
     
     <div className='flex gap-2'>
-    <AddToBag id={data.id} name={data.name} price={data.price}  image={data.images[0]} currency={'DA'} key={data.id} />
-     <Button variant={'secondary'} size={'lg'}>Checkout Now</Button>
+    <AddToBag id={data.id} name={data.name} price={data.price} discount={data.discount}  image={data.images[0]} currency={'DA'} key={data.id} />
+  <CheckOut  total={data.price-data.discount}  />
     </div>
     <div className='text-base text-muted-foreground mt-8 tracking-wide'>
         {data.description}

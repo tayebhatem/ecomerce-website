@@ -11,6 +11,7 @@ interface Product{
     id:string;
     name:string;
     price:number;
+    discount:number;
     slug:string;
     categoryName:string
     imageUrl:string;
@@ -21,6 +22,7 @@ const getData=async(category:string)=>{
         _id,
           "imageUrl": images[0].asset->url,
           price,
+          discount,
           name,
           "slug": slug.current,
           "categoryName": category->name
@@ -62,10 +64,10 @@ export default async function CategoryPage({params}:{params:{category:string}}) 
                     </h3>
                    
                 
-                <p className='font-bold    '>{product.price} DA</p>
+                <p className='font-bold    '>{product.price-product.discount} DA</p>
                 </div>
                 </Link>
-                <AddToBag  currency='DA' name={product.name} image={product.imageUrl} price={product.price} id={product.id} key={product.id}/>
+                <AddToBag  currency='DA' name={product.name} image={product.imageUrl} price={product.price} discount={product.discount} id={product.id} key={product.id}/>
               </div>
                
                 

@@ -78,7 +78,7 @@ export default function ShoppingCartModel() {
                         <div>
                             <div className="flex justify-between items-center text-base font-medium  ">
                                <h3 className="text-sm md:text-lg font-medium">{entry.name}</h3>
-                               <p className="font-bold ml-4 text-sm md:text-lg">{entry.price} DA</p>
+                               <p className="font-bold ml-4 text-sm md:text-lg">{entry.price-entry.discount} DA</p>
                             </div>
                             
                         </div>

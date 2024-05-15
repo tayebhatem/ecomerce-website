@@ -11,6 +11,7 @@ import MotionContainer from './MotionContainer';
 interface Product{
     id:string;
     price:number;
+    discount:number;
     name:string;
     slug:string;
     categoryName:string;
@@ -22,6 +23,7 @@ async function getData() {
         _id,
           "imageUrl": images[0].asset->url,
           price,
+          discount,
           name,
           "slug": slug.current,
           "categoryName": category->name
@@ -63,10 +65,10 @@ export default async function Newest(scrollRef:any) {
                      
                     </h3>
                 
-                <p className='font-bold    text-sm  '>{product.price} DA</p>
+                <p className='font-bold    text-sm  '>{product.price-product.discount} DA</p>
                 </div>
                 </Link>
-               <AddToBag  currency='DA' name={product.name} image={product.imageUrl} price={product.price} id={product.id} key={product.id}/>
+               <AddToBag  currency='DA' name={product.name} image={product.imageUrl} price={product.price} discount={product.discount} id={product.id} key={product.id}/>
                
               </div>
                 

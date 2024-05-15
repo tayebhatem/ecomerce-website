@@ -12,6 +12,7 @@ interface Product{
     id:string;
     name:string;
     price:number;
+    discount:number;
     slug:string;
     categoryName:string
     imageUrl:string;
@@ -67,10 +68,10 @@ export default async function AllPage() {
                     </h3>
                    
                 
-                <p className='font-bold line-clamp-1  '>{product.price} DA</p>
+                <p className='font-bold line-clamp-1  '>{product.price-product.discount} DA</p>
                 </div>
                 </Link>
-                <AddToBag  currency='DA' name={product.name} image={product.imageUrl} price={product.price} id={product.id} key={product.id}/>
+                <AddToBag  currency='DA' name={product.name} image={product.imageUrl} price={product.price} discount={product.discount} id={product.id} key={product.id}/>
                </div>
                
                 

@@ -66,7 +66,7 @@ export default function NavBar() {
       <ModeToggle/>
 
       
-      <Sheet  >
+      <Sheet >
     <SheetTrigger>
     <HamburgerMenuIcon className='w-5 h-5  block cursor-pointer md:hidden'/>
     </SheetTrigger>
@@ -79,7 +79,7 @@ export default function NavBar() {
     <div className='flex flex-col gap-8 my-6 justify-center items-center'>
     {
     Links.map((link,index)=>(
-     <Link href={link.href} key={index} className={currentPath===link.href?'text-primary text-lg font-semibold':'text-lg font-semibold  transition duration-100 hover:text-primary'}>{link.name}</Link>
+     <Link href={link.href} key={index}  className={currentPath===link.href?'text-primary text-lg font-semibold':'text-lg font-semibold  transition duration-100 hover:text-primary'}>{link.name}</Link>
     ))
      }
 </div>
