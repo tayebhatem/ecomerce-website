@@ -4,9 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
-import { Button } from './ui/button';
 import AddToBag from './AddToBag';
-import { MotionDiv } from './MotionDiv';
 import MotionContainer from './MotionContainer';
 interface Product{
     id:string;
