@@ -40,8 +40,9 @@ export default function RootLayout({
        <div className="pb-6 mt-32 sm:pb-8 lg:pb-12">
         {children}
       
-        <Footer/>
+        
        </div>
+       <Footer/>
        <Toaster />
         </ShoppingCartProvider>
         

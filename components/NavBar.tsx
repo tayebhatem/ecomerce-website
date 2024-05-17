@@ -39,7 +39,7 @@ export default function NavBar() {
   const { handleCartClick,cartCount } = useShoppingCart();
  
   return (
-   <header className=' border-b fixed z-30 top-0 w-full bg-card'>
+   <header className=' border-b fixed z-30 top-0 w-full bg-card '>
     <div className='flex justify-between py-3 sm:py-0 items-center mx-auto max-w-2xl px-4 sm:max-w-7xl'>
      <Link href={"/"}>
      <h1 className='text-2xl md:text-4xl font-bold'>Dz<span className='text-primary'>Comerce</span></h1>

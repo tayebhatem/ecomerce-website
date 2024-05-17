@@ -65,7 +65,7 @@ export default async function ProductPage({params}:{params:{slug:string}}) {
     
     <div className='flex gap-2'>
     <AddToBag id={data.id} name={data.name} price={data.price} discount={data.discount}  image={data.images[0]} currency={'DA'} key={data.id} />
-  <CheckOut  total={data.price-data.discount}  />
+  <CheckOut  total={data.price-data.discount}  isProduct={true} />
     </div>
     <div className='text-base text-muted-foreground mt-8 tracking-wide'>
         {data.description}

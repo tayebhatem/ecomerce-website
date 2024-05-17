@@ -125,7 +125,7 @@ export default function ShoppingCartModel() {
               Shipping is calculated at checkout.
             </p>
             <div className="mt-6">
-            <CheckOut total={totalPrice}/>
+            <CheckOut total={totalPrice} isProduct={false}/>
             </div>
             </div>
          }
