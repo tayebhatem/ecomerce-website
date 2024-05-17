@@ -3,8 +3,10 @@ import React from 'react'
 import { Button } from './ui/button'
 import { useShoppingCart } from 'use-shopping-cart'
 import { urlFor } from '@/app/lib/sanity';
-import { toast, useToast } from './ui/use-toast';
+import { toast } from "sonner"
 import { usePathname } from 'next/navigation';
+import { CheckCircledIcon } from '@radix-ui/react-icons';
+import { CheckCheck, CheckCircle, CheckCircle2, CheckCircle2Icon, CheckIcon } from 'lucide-react';
 
 interface Product{
     id:string;
@@ -17,7 +19,7 @@ interface Product{
   }
 
 export default function AddToBag({id,name,price,discount,image,currency}:Product) {
-    const { toast } = useToast()
+    
     const product:Product={
         id:id,
         name:name,
@@ -32,10 +34,7 @@ export default function AddToBag({id,name,price,discount,image,currency}:Product
 
     const handAddToBag=(name:string)=>{
 
-        toast({
-            description: "Your message has been sent.",
-          });
-        
+      
         const items=Object.values(cartDetails ?? {})
        
         const foundItem = items.find(item => item.name === name);
@@ -46,9 +45,16 @@ export default function AddToBag({id,name,price,discount,image,currency}:Product
           addItem(product)
            
         }
+
+
+         toast("Product has been added", {
+          description: name,
+          
+          icon:<CheckIcon className='text-primary' />
+        })
       
     }
   return (
-    <Button size={'lg'} onClick={()=>handAddToBag(name)} className={pathname.startsWith('/product/')? '':'w-full'}>Add To Cart</Button>
+    <Button size={'lg'} onClick={()=>handAddToBag(name)} className={pathname.startsWith('/product/')? '':'w-full '}>Add To Cart</Button>
   )
 }
