@@ -29,32 +29,8 @@ export default function ShoppingCartModel() {
       } = useShoppingCart();
      const items=Object.values(cartDetails ?? {})
 
-      const handlickCheckout=async()=>{
-        if (!totalPrice) return 
-        const finalPrice=totalPrice+400
-         const options = {
-             method: 'POST',
-             headers: {
-               Authorization: 'Bearer test_sk_E2ft89POxw9vMgHC0R7jissDEGS5dn0u6uPdb0fW',
-               'Content-Type': 'application/json'
-             },
-             body: `{"amount":${finalPrice},"currency":"dzd","payment_method":"edahabia","failure_url":"http://localhost:3000/failure","webhook_endpoint":"http://localhost:3000","description":"test","locale":"ar","collect_shipping_address":false,"success_url":"http://localhost:3000/success"}`
-           };
-           
-    await fetch('https://pay.chargily.net/test/api/v2/checkouts', options)
-             .then(response => response.json())
-             .then(
-                 response => {
-                     if(response.checkout_url){
-                         window.location.href = response.checkout_url;
-                     }
-                   
-                 }
-                 )
-             .catch(err => console.error(err));
-         
+     
        
-       }
   return (
     <Sheet open={shouldDisplayCart} onOpenChange={()=>handleCartClick()}>
      
@@ -70,8 +46,8 @@ export default function ShoppingCartModel() {
                 cartCount===0 ?<h1 className="py-6  text-muted-foreground text-center h-full">You have no items</h1>:
                 <>
                 {
-                   items.map((entry)=>(
-                        <li key={entry.id} className="flex py-6 ">
+                   items.map((entry,index)=>(
+                        <li key={index} className="flex py-6 ">
                         <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                           <Image src={entry.image as string} alt="product image" width={100} height={100}/>
                         </div>

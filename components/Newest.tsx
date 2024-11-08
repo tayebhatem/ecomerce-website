@@ -59,22 +59,22 @@ export default async function Newest(scrollRef:any) {
       <CarouselContent >
       {
             products.map((product)=>(
-              <CarouselItem key={product.id} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+              <CarouselItem key={product.id} className=" md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
                
-                     <div className='group relative cursor-pointer' key={product.id}>
+                     <div className='group relative cursor-pointer' >
                          <Link href={'/product/'+product.slug}>
                 <div className='aspect-square w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-88'>
                  <Image src={product.imageUrl} width={300} height={300} className='w-full h-full object-center object-cover lg:h-full lg:w-full' alt={product.slug} />
                 </div>
                 <div className='my-3 flex justify-between items-center '>
                 
-                    <h3 className=' font-semibold text-sm  line-clamp-1 '>
+                    <h3 className=' font-semibold  line-clamp-1 '>
                        
                          {product.name}
                      
                     </h3>
                 
-                <p className='font-bold    text-sm  '>{product.price-product.discount} DA</p>
+                <p className='font-bold    text-lg  '>{product.price-product.discount} DA</p>
                 </div>
                 </Link>
                <AddToBag  currency='DA' name={product.name} image={product.imageUrl} price={product.price} discount={product.discount} id={product.id} key={product.id}/>
